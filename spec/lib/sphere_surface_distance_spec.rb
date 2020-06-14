@@ -10,7 +10,7 @@ describe SphereSurfaceDistance::Calculator do
   end
 
   it 'returns a value between 0 and 2 * pi for up to 360 degrees' do
-    expect(described_class.degress_to_radians(rand(360))).to be_between(0, 2 * Math::PI)
+    expect(described_class.degrees_to_radians(rand(360))).to be_between(0, 2 * Math::PI)
   end
 
   it 'calculates the central angle' do
@@ -41,7 +41,8 @@ describe SphereSurfaceDistance::Calculator do
   it 'calculates the distance between the two points on earth' do
     p1 = { latitude: 0, longitude: 0 }
     p2 = { latitude: 0, longitude: 180 }
+    earth_radius = 6_371_000
 
-    expect(described_class.surface_distance_on_earth(p1, p2, radius)).to eq(Math::PI * radius)
+    expect(described_class.surface_distance_on_earth(p1, p2)).to eq(Math::PI * earth_radius)
   end
 end

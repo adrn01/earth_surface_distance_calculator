@@ -39,7 +39,7 @@ module SphereSurfaceDistance
           l: degrees_to_radians(point2[:latitude]),
           p: degrees_to_radians(point2[:longitude])
         }
-        surface_distance_on_sphere(point1_rad, point2_rad, EarthSurfaceDistanceCalculator::EARTH_RADIUS)
+        surface_distance_on_sphere(point1_rad, point2_rad, SphereSurfaceDistance::EARTH_RADIUS)
       end
 
       # converts degrees to radians
