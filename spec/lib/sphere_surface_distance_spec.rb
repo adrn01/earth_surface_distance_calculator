@@ -31,8 +31,11 @@ describe SphereSurfaceDistance::Calculator do
   it 'calculates the distance between the two points on earth' do
     p1 = { latitude: 0, longitude: 0 }
     p2 = { latitude: 0, longitude: 180 }
+    p3 = { latitude: 53.339428, longitude: -6.257664 }
+    p4 = { latitude: 51.92893, longitude: -10.27699 }
     earth_radius = 6_371_000
 
     expect(described_class.surface_distance_on_earth(p1, p2)).to eq(Math::PI * earth_radius)
+    expect((described_class.surface_distance_on_earth(p3, p4) / 1000).round(2)).to eq(313.26)
   end
 end

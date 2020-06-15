@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'sphere_surface_distance'
-  s.version = '1.0.0'
+  s.version = '1.0.1'
   s.date = '2020-06-13'
   s.summary = 'sphere_surface_distance is a ruby gem to calculate the arc distance between two sets of ' \
   'latitutde and longitude co-ordinates'

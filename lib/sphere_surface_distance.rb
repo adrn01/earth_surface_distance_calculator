@@ -33,12 +33,12 @@ module SphereSurfaceDistance
       # @return [Float] distance in meters between two points on earth
       def surface_distance_on_earth(point1, point2)
         point1_rad = {
-          l: Util.degrees_to_radians(point1[:latitude]),
-          p: Util.degrees_to_radians(point1[:longitude])
+          p: Util.degrees_to_radians(point1[:latitude]),
+          l: Util.degrees_to_radians(point1[:longitude])
         }
         point2_rad = {
-          l: Util.degrees_to_radians(point2[:latitude]),
-          p: Util.degrees_to_radians(point2[:longitude])
+          p: Util.degrees_to_radians(point2[:latitude]),
+          l: Util.degrees_to_radians(point2[:longitude])
         }
         surface_distance_on_sphere(point1_rad, point2_rad, EARTH_RADIUS)
       end
