@@ -5,9 +5,12 @@ Gem::Specification.new do |s|
   s.summary = 'sphere_surface_distance is a ruby gem to calculate the arc distance between two sets of ' \
   'latitutde and longitude co-ordinates'
   s.authors = ['Adrian Heaeny']
+  s.homepage = 'https://github.com/adrn01/sphere_surface_distance'
   s.license = 'MIT'
   s.files = [
-    'lib/sphere_surface_distance.rb'
+    'lib/constants.rb',
+    'lib/sphere_surface_distance.rb',
+    'lib/util.rb'
   ]
   s.require_paths = ['lib']
 

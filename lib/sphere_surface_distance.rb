@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-module SphereSurfaceDistance
-  EARTH_RADIUS = 6_371_000
+require 'util'
+require 'constants'
 
+module SphereSurfaceDistance
   # utility class to calculate curved distance between two points
   class Calculator
     class << self
@@ -32,21 +33,14 @@ module SphereSurfaceDistance
       # @return [Float] distance in meters between two points on earth
       def surface_distance_on_earth(point1, point2)
         point1_rad = {
-          l: degrees_to_radians(point1[:latitude]),
-          p: degrees_to_radians(point1[:longitude])
+          l: Util.degrees_to_radians(point1[:latitude]),
+          p: Util.degrees_to_radians(point1[:longitude])
         }
         point2_rad = {
-          l: degrees_to_radians(point2[:latitude]),
-          p: degrees_to_radians(point2[:longitude])
+          l: Util.degrees_to_radians(point2[:latitude]),
+          p: Util.degrees_to_radians(point2[:longitude])
         }
-        surface_distance_on_sphere(point1_rad, point2_rad, SphereSurfaceDistance::EARTH_RADIUS)
-      end
-
-      # converts degrees to radians
-      # @param degrees [Float] degrees
-      # @return [Float] distance in meters between two points
-      def degrees_to_radians(degrees)
-        degrees * Math::PI / 180
+        surface_distance_on_sphere(point1_rad, point2_rad, EARTH_RADIUS)
       end
     end
   end
