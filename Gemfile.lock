@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sphere_surface_distance (0.0.1)
+    sphere_surface_distance (1.0.0)
 
 GEM
   remote: https://rubygems.org/
